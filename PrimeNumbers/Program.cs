@@ -9,14 +9,14 @@ namespace PrimeNumbers
     class Program
     {
         /// <summary>
-        /// A Function for checking prime number
+        /// Функция для проверки на простое число
         /// </summary>
-        /// <param name="s"> /// Convert string to numbers </param>
+        /// <param name="s"> /// Конвертирует строку в числа </param>
         /// <returns></returns>
         static bool IsPrime(string s)
         {
             int x = int.Parse(s);
-            /// Counter for identifiyng prime number
+            /// Счётчик для того, чтобы потом определить простое эти число или нет
             int cnt = 0;
             for (int j = 2; j <= Math.Sqrt(x); ++j)
             {
@@ -25,7 +25,8 @@ namespace PrimeNumbers
                     cnt++;
                 }
             }
-            /// If counter equals 0 or entered number doesn't equal 1 the number is prime
+            /// Если счетчик равен 0 и заданное число не равно 1 
+            /// (так как 1 не простое число) то функция принимает TRUE
             return cnt == 0 && x != 1;
 
         }
@@ -34,7 +35,7 @@ namespace PrimeNumbers
             for (int i = 0; i < args.Length; ++i) {
                 if (IsPrime(args[i]))
                 {
-                    /// Add "is prime"
+                    /// К каждому числу добавляем "Is Prime" или "Is not Prime"
                     Console.WriteLine(args[i] + " Is Prime");
                 }
                 else
